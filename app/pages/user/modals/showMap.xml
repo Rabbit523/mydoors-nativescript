@@ -1,0 +1,17 @@
+<GridLayout
+    class="md-showmap"
+    touch="bypassTap"
+    id="showMapComponent"
+    loaded="showMapLoaded"
+    xmlns:maps="nativescript-google-maps-sdk"
+    rows="*, 400, auto, *"
+    columns="15, *, 15">
+    <maps:mapView row="1" col="1"
+        class="md-showmap-map"
+        mapReady="onMapReady"
+        markerSelect="onMarkerSelect" />
+    <StackLayout row="2" col="1" class="md-showmap-buttons">
+        <Button horizontalAlignment="center" class="md-btn" text="Chiudi" tap="hideShowMap" />
+    </StackLayout>
+
+</GridLayout>

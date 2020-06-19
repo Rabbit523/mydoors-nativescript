@@ -1,0 +1,12 @@
+.md-showmap {
+     background-color: rgba(2555, 2555, 2555, 0.75);
+     opacity: 0;
+     visibility: collapse;
+}
+
+.md-showmap .md-showmap-map {
+    border-radius: 8;
+    margin-bottom: 20;
+}
+
+.md-showmap .md-showmap-buttons {}

@@ -1,0 +1,6 @@
+<GridLayout class="md-loader" isPassThroughParentEnabled="false">
+    <Label tap="{{ tapOnLoader }}" text="" textWrap="true" isUserInteractionEnabled="false" />
+    <FlexboxLayout class="md-loader-inner">
+        <Label class="md-loader-text" text="Loading..." textWrap="true" />
+    </FlexboxLayout>
+</GridLayout>

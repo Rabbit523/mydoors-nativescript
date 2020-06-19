@@ -1,0 +1,39 @@
+<Page class="page page-profile"
+    actionBarHidden="true"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:comps="components"
+    navigatingTo="navigatingTo">
+    <GridLayout rows="auto, *">
+        <ScrollView row="0" rowSpan="2">
+            <StackLayout class="page-profile-content" paddingTop="100">
+                <Image
+                    src="{{ getAvatar }}"
+                    stretch="aspectFill"
+                    class="profile-avatar" tap="{{ editAvatarImage }}" />
+                <!-- <Image
+                    visibility="{{ !avatar ? 'visible' : 'collapsed'}}"
+                    src="{{ !gender ? '~/images/avatars/male.png' : '~/images/avatars/female.png' }}"
+                    stretch="aspectFill"
+                    class="profile-avatar" tap="{{ editAvatarImage }}" /> -->
+
+                <Label text="Modifica profilo" class="profile-name" />
+
+                <TextField class="text-field" returnKeyType="next" text="{{ firstname }}" hint="Nome" />
+                <TextField class="text-field" returnKeyType="next" text="{{ lastname }}" hint="Cognome" />
+                <TextField class="text-field" returnKeyType="next" text="{{ username }}" hint="Username" />
+                <TextField class="text-field" returnKeyType="next" text="{{ email }}" hint="Email" keyboardType="email" />
+                <TextField class="text-field" returnKeyType="next" text="{{ birthdate }}" hint="Data di nascita" />
+                <FlexboxLayout alignItems="center" justifyContent="center">
+                    <Label text="Maschio" />
+                    <Switch checked="{{ gender }}" offBackgroundColor="gray" class="switch" />
+                    <Label text="Femmina" />
+                </FlexboxLayout>
+                <Button class="md-btn large" text="Modifica" tap="{{ onSubmit }}" />
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+    </GridLayout>
+</Page>

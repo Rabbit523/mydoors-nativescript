@@ -1,0 +1,11 @@
+@import 'app-common.css';
+
+.back-button { background-size: cover; }
+.text-field { background-size: cover; }
+.md-btn { background-size: cover; }
+.md-btn.large { background-size: cover; }
+.md-door-btn Button { background-size: 321dip 321dip; }
+.md-door-btn.md-door-btn-mistery Button { background-size: cover; }
+.md-btn-add-door { background-size: 78dip; }
+.md-user-actions .md-user-actions-inner .md-user-action { background-size: cover; }
+.md-listview-users .md-lv-single { background-size: auto 100%; }

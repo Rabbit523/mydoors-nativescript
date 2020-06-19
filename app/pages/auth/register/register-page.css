@@ -1,0 +1,9 @@
+.md-register-page-checks {
+    align-items: center;
+    justify-content: space-around;
+    margin: 20 0;
+}
+
+.md-register-page-checks > .md-checkbox {
+    flex-shrink: 0;
+}

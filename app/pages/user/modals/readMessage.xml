@@ -1,0 +1,13 @@
+<GridLayout id="readMessageModal" loaded="readMessageLoaded" touch="bypassTap" class="md-read-message-modal" rows="*, auto, *" columns="*, 300, *">
+
+    <!-- <Image col="1" row="1" class="md-read-message-modal-bg" src="~/images/alertdialog.png" stretch="aspectFit" /> -->
+    <FlexboxLayout class="md-read-message-modal-wrapper" col="1" row="1">
+        <StackLayout class="md-read-message-modal-inner">
+            <Label class="md-read-message-modal-title" text="{{ user_name }}" textWrap="true" />
+            <Label class="md-read-message-modal-body" text="{{ body }}" textWrap="true" />
+        </StackLayout>
+        <FlexboxLayout class="md-read-message-modal-buttons">
+            <Button class="md-btn" text="Chiudi" tap="hideReadMessage" />
+        </FlexboxLayout>
+    </FlexboxLayout>
+</GridLayout>

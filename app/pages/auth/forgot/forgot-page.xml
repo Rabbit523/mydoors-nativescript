@@ -1,0 +1,16 @@
+<Page actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<FlexboxLayout height="100%" alignItems="center" flexDirection="column" justifyContent="center">
+		<StackLayout width="283">
+			<Image src="~/images/logomydoors.png" stretch="aspectFill" class="img-logo" />
+			<Label textAlignment="center" class="m-b-30">
+                <FormattedString>
+                    <Span class="md-title" text="Recupera password"/>
+                </FormattedString>
+            </Label>
+			<TextField class="text-field" returnKeyType="done" text="{{ email }}" hint="Email" keyboardType="email" />
+			<Button class="md-btn" text="Ripristina" tap="{{ onSubmit }}" />
+			<Label text="oppure" textAlignment="center" />
+			<Button class="md-btn" text="Accedi" tap="onTap" />
+		</StackLayout>
+    </FlexboxLayout>
+</Page>

@@ -1,0 +1,17 @@
+.md-user-action {}
+.md-user-action .md-user-action-image { }
+.md-user-action .md-user-action-notifs {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.md-user-action .md-user-action-notifs Label {
+    width: 20;
+    height: 20;
+    border-radius: 20;
+    background-color: var(--pinkish);
+    color: white;
+    margin: 1;
+    font-size: 16;
+    font-family: 'Roboto-Bold';
+    padding: 0 5;
+}

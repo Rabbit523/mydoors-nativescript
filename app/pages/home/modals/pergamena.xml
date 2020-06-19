@@ -1,0 +1,22 @@
+<FlexboxLayout loaded="loadedPergamenaHome" id="pergamenaModal" rowSpan="4" colSpan="3">
+    <GridLayout rows="459" columns="325">
+        <FlexboxLayout justifyContent="center" alignItems="center" id="pergamenaClosed">
+            <Image src="~/images/pergamena_closed.png" height="153" width="324" stretch="aspectFit" />
+        </FlexboxLayout>
+        <GridLayout id="pergamenaOpened" rows="459" columns="325">
+            <Image src="~/images/pergamena_opened.png" stretch="aspectFit" />
+            <GridLayout rows="50, auto, *, auto, 50">
+                <Label row="1" class="h1 text-center" text="Pergamena" textWrap="true" />
+                <GridLayout rows="*, auto" class="p-x-30" row="2">
+                    <FlexboxLayout row="0" alignItems="center" justifyContent="space-around">
+                        <!-- <Image src="~/images/picons/p_calice.png" width="32" height="64" stretch="aspectFit" /> -->
+                        <Image src="{{ pergamena_icon }}" width="32" height="64" stretch="aspectFit" />
+                        <Label class="{{ pergamena_color }}" textWrap="true" />
+                    </FlexboxLayout>
+                    <Label row="1" class="h4 p-y-20 p-x-20" textWrap="true" text="{{ pergamena_message }}" />
+                </GridLayout>
+                <Button row="3" class="md-btn" borderRadius="12" text="Chiudi" tap="closePergamena" />
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</FlexboxLayout>

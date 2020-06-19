@@ -1,0 +1,12 @@
+<GridLayout loaded="loadedAction" class="md-user-action-wrapper" rows="5, 58, 5" columns="5, 58, 5">
+    <GridLayout class="md-user-action" row="1" col="1">
+        <Image id="action_img" class="md-user-action-image" src="{{image}}" stretch="aspectFit" />
+        <FlexboxLayout class="md-user-action-notifs">
+            <Label
+                visibility="{{ notifs > 0 ? 'visible' : 'collapsed' }}"
+                id="action_notifs"
+                text="{{ notifs }}"
+                textWrap="true" />
+        </FlexboxLayout>
+    </GridLayout>
+</GridLayout>

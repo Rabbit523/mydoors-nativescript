@@ -1,0 +1,8 @@
+#misteryDoor, #readPergamena {
+    width: 160;
+    height: 160;
+    transform: translateY(160);
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+}

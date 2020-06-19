@@ -1,0 +1,14 @@
+.md-loader {
+    background-color: rgba(255,255,255,0.75);
+    color: #252525;
+}
+
+.md-loader .md-loader-inner {
+    justify-content: center;
+    align-items: center;
+}
+
+.md-loader .md-loader-text {
+    font-size: 30;
+    font-family: "Roboto-Bold", sans-serif;
+}

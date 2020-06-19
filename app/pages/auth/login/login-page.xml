@@ -1,0 +1,24 @@
+<Page class="page" actionBarHidden="true" loaded="onLoaded" navigatingTo="navigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+    <FlexboxLayout height="100%" alignItems="center" flexDirection="column" justifyContent="center">
+        <StackLayout width="283">
+            <Image src="~/images/logomydoors.png" stretch="aspectFill" class="img-logo" />
+            <Label textAlignment="center" class="m-b-30">
+                <FormattedString>
+                    <Span class="md-title" text="Mydoors"/>
+                </FormattedString>
+            </Label>
+
+            <StackLayout visibility="{{ showCode ? 'collapsed' : 'visible' }}">
+                <Label class="h3 text-center" marginBottom="30" textWrap="true" text="Inserisci qui di seguito il tuo numero di telefono" />
+                <TextField class="text-field" marginBottom="10" returnKeyType="next" text="{{ phone }}" hint="Telefono" keyboardType="phone" />
+                <Button class="md-btn" text="Invia" tap="{{ onSubmit }}" />
+            </StackLayout>
+
+            <StackLayout visibility="{{ showCode ? 'visible' : 'collapsed' }}">
+                <Label class="h3 text-center" marginBottom="30" textWrap="true" text="Inserisci qui di seguito il codice che hai ricevuto via SMS" />
+                <TextField class="text-field" marginBottom="10" returnKeyType="done" text="{{ code }}" hint="Codice" />
+                <Button class="md-btn" text="Invia" id="confirmCode" />
+            </StackLayout>
+        </StackLayout>
+    </FlexboxLayout>
+</Page>

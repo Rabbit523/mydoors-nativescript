@@ -1,0 +1,16 @@
+.md-pergamena-check {
+    justify-content: flex-start;
+    align-items: center;
+}
+.md-pergamena-check .box {
+    width: 30;
+    height: 30;
+    background-color: white;
+    margin-right: 20;
+    border-radius: 5;
+}
+
+.md-pergamena-check .box-label {
+    font-family: "Roboto-Bold";
+    font-size: 16;
+}

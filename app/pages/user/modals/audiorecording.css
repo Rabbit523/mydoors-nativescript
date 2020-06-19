@@ -1,0 +1,28 @@
+.md-audio-rec {
+    background-color: rgba(255,255,255,0.75);
+    padding: 10;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.md-audio-rec .md-audio-rec-inner {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.md-audio-rec .md-audio-rec-inner .md-audio-rec-button {
+    width: 140;
+    height: 140;
+    margin-bottom: 20;
+}
+
+.md-audio-rec .md-audio-rec-inner .md-audio-rec-actions {
+    justify-content: center;
+    align-items: center;
+}
+
+.md-audio-rec .md-audio-rec-inner .md-audio-rec-actions Image {
+    width: 40;
+    height: 40;
+    margin: 0 20;
+}

@@ -1,0 +1,32 @@
+<Page class="page" xmlns:comps="components" actionBarHidden="true" xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="navigatingTo" navigatedTo="navigatedTo">
+    <GridLayout rows="130, *">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <GridLayout row="1" rows="auto, 20, *" class="page-content">
+            <StackLayout>
+                <Label class="h2 m-t-20 text-center" width="300" text="Seleziona utente che vuoi condividere" textWrap="true" />
+                <TextField row="0" horizontalAlignment="center" class="text-field" hint="Search" text="{{ search }}" textChange="{{ textChange }}" />
+            </StackLayout>
+            <GridLayout rows="auto, 20, *" row="2">
+                <ListView row="2" class="md-listview-users" horizontalAlignment="center"
+                    visibility="{{ filteredUsers.length > 0 ? 'visible' : 'collapsed' }}"
+                    items="{{ filteredUsers }}"
+                    itemTap="{{ onItemTap }}">
+                    <ListView.itemTemplate>
+                        <GridLayout rows="49">
+                            <Image row="0" src="res://listview_user" stretch="aspectFill" />
+
+                            <FlexboxLayout row="0" class="md-lv-single">
+                                <Image class="md-lv-single-avatar" src="{{ avatar }}" stretch="aspectFill" />
+                                <Label text="{{ firstname + ' ' + lastname }}" textWrap="true" />
+                                <Image class="md-lv-single-add" src="~/images/adddoor.png" stretch="aspectFill" />
+                            </FlexboxLayout>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+                <Label text="Non hai nessun utente da condividere" textWrap="true" row="2" visibility="{{ filteredUsers.length == 0 ? 'visible' : 'collapsed' }}" />
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</Page>

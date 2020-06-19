@@ -1,0 +1,55 @@
+<Page class="page" xmlns:comps="components" xmlns:lv="nativescript-ui-listview" actionBarHidden="true" navigatingTo="navigatingTo">
+    <GridLayout rows="130, *, 80">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <GridLayout row="1" rows="auto, *" class="page-content">
+            <StackLayout row="0">
+                <FlexboxLayout class="md-door-btn md-door-btn-single md-door-btn-mistery ">
+                    <Image width="103" height="103" src="{{ misteryDoor.color }}" />
+                    <Label text="{{ misteryDoor.name }}" />
+                </FlexboxLayout>
+            </StackLayout>
+            <lv:RadListView class="m-t-10" style="width: 90%; margin: 0 auto;" row="1"
+                visibility="{{ misteryDoor.users.length > 0 ? 'visible' : 'collapsed' }}"
+                items="{{ misteryDoor.users }}"
+                multipleSelection="false"
+                selectionBehavior="Press"
+                itemTap="{{ itemSelected }}">
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="100" spanCount="4"/>
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                    <StackLayout class="md-door-user">
+                        <AbsoluteLayout class="md-door-user-avatar">
+                            <Image visibility="{{ !!avatar ? 'visible' : 'collapsed' }}" src="{{ avatar }}" stretch="aspectFill"/>
+                            <Image visibility="{{ !avatar ? 'visible' : 'collapsed' }}" src="{{ gender == 'M' ? '~/assets/avatars/male.png' : '~/assets/avatars/female.png' }}" stretch="aspectFill"/>
+                            <!-- <Label visibility="{{ notifs > 0 ? 'visible' : 'collapsed' }}" text="{{ notifs }}" class="usr-notif" /> -->
+                        </AbsoluteLayout>
+                        <Label class="md-door-user-name" text="{{ firstname + ' ' + lastname }}" textWrap="true" />
+                    </StackLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+        </GridLayout>
+
+        <Label
+            row="1"
+            class="md-door-noelements"
+            visibility="{{ misteryDoor.users.length === 0 ? 'visible' : 'collapsed' }}"
+            text="Non ci sono utenti nella Mistery Door."
+            textWrap="true" />
+
+        <FlexboxLayout class="md-modal" rowSpan="3" justifyContent="center" alignItems="center" visibility="{{ infoModal ? 'visible' : 'collapsed' }}">
+            <GridLayout rows="106, 20, auto" columns="*, 283, *">
+                <Image src="~/images/alertdialog.png" row="0" col="1" stretch="aspectFit" />
+                <StackLayout row="0" col="1" class="p-10">
+                    <Label text="Attenzione!" class="h3 p-0 p-b-5" textWrap="true" />
+                    <Label text="Questa door contiene contatti sconosciuti o che non hai aggiunto" class="h5" textWrap="true" />
+                </StackLayout>
+                <StackLayout row="2" col="1">
+                	<Button class="md-btn" text="Chiudi" tap="{{ closeModal }}" />
+                </StackLayout>
+            </GridLayout>
+        </FlexboxLayout>
+    </GridLayout>
+</Page>

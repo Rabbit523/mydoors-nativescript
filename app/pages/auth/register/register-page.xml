@@ -1,0 +1,44 @@
+<Page class="page" actionBarHidden="true" navigatingTo="navigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+    <ScrollView height="100%">
+        <FlexboxLayout alignItems="center" flexDirection="column" justifyContent="center">
+            <StackLayout flexShrink="0" margin="20">
+                <Image src="~/images/logomydoors.png" stretch="aspectFill" class="img-logo" />
+                <Label textAlignment="center" class="m-b-30">
+                        <FormattedString>
+                            <Span class="md-title" text="Registrazione"/>
+                        </FormattedString>
+                    </Label>
+                <TextField class="text-field" returnKeyType="next" text="{{ firstname }}" hint="Nome" />
+                <TextField class="text-field" returnKeyType="next" text="{{ lastname }}" hint="Cognome" />
+                <TextField class="text-field" returnKeyType="next" text="{{ username }}" hint="Username" />
+                <TextField class="text-field" returnKeyType="next" text="{{ email }}" hint="Email" />
+                <TextField class="text-field" returnKeyType="next" text="{{ birthdate }}" hint="Data di nascita: 15-01-2020" />
+                <FlexboxLayout class="md-register-page-checks" marginBottom="10">
+                    <FlexboxLayout class="md-checkbox" tap="{{ toggleGender }}">
+                        <Label class="{{ !gender ? 'md-checkbox-check checked' : 'md-checkbox-check'}}" />
+                        <Label class="md-checkbox-label" text="Maschio" textWrap="true" />
+                    </FlexboxLayout>
+
+                    <FlexboxLayout class="md-checkbox" tap="{{ toggleGender }}">
+                        <Label class="{{ gender ? 'md-checkbox-check checked' : 'md-checkbox-check'}}" />
+                        <Label class="md-checkbox-label" text="Femmina" textWrap="true" />
+                    </FlexboxLayout>
+                </FlexboxLayout>
+
+                <StackLayout padding="20">
+                    <Label color="#505050"
+                        class="body text-center"
+                        textWrap="true"
+                        text="Spuntando questa casella e andando avanti con il pulsante 'Conferma', dichiari di avere un'età uguale o superiore ai 14 anni." />
+
+                    <FlexboxLayout class="md-checkbox" tap="{{ toggleCheck }}">
+                        <Label class="{{ checked ? 'md-checkbox-check checked' : 'md-checkbox-check'}}" />
+                        <Label class="md-checkbox-label" text="Dichiaro di avere un'età uguale o superiore ai 14 anni." textWrap="true" />
+                    </FlexboxLayout>
+                </StackLayout>
+
+                <Button class="md-btn" text="Continua" tap="{{ onSubmit }}" />
+            </StackLayout>
+        </FlexboxLayout>
+    </ScrollView>
+</Page>

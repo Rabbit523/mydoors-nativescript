@@ -1,0 +1,18 @@
+<Page class="page" xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <GridLayout rows="130, *, 80">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <Button class="md-reset-btn back-button" tap="goBack" />
+        </StackLayout>
+        <GridLayout row="1" rows="auto, *" class="page-content">
+            <StackLayout row="0">
+                <FlexboxLayout class="md-door-btn">
+                    <Button style="{{ 'background-color: ' + door_color }}" />
+                    <Label text="{{ door_name }}" />
+                </FlexboxLayout>
+            </StackLayout>
+        </GridLayout>
+        <StackLayout row="2">
+            <Button horizontalAlignment="center" class="md-reset-btn md-btn-add-door" id="addUser" tap="addUser" />
+        </StackLayout>
+    </GridLayout>
+</Page>

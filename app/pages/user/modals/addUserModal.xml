@@ -1,0 +1,20 @@
+<FlexboxLayout loaded="addUserModalLoaded" id="addUserModal" class="md-modal" rowSpan="3" visibility="{{ adduser_modal ? 'visible' : 'collapsed' }}">
+    <GridLayout rows="106, 20, auto" columns="*, 283, *">
+        <Image src="~/images/alertdialog.png" row="0" col="1" stretch="aspectFit" />
+        <StackLayout row="0" col="1" class="p-10">
+            <Label text="Aggiungi utente" class="h3 p-0 p-b-5" textWrap="true" />
+            <Label text="Seleziona la doors dove vuoi aggiungere l'utente" class="h5" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="2" col="1">
+            <Repeater items="{{ doorlist }}">
+                <Repeater.itemsLayout>
+                    <StackLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <Button class="md-btn large" text="{{ $value.name }}" tap="addUserToDoor" door-id="{{ $value.id }}" />
+                </Repeater.itemTemplate>
+            </Repeater>
+            <Button marginTop="60" class="md-btn large" text="Chiudi" tap="closeAddUserModal" />
+        </StackLayout>
+    </GridLayout>
+</FlexboxLayout>

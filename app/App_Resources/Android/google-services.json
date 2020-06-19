@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "321310422357",
+    "firebase_url": "https://mydoors-cee27.firebaseio.com",
+    "project_id": "mydoors-cee27",
+    "storage_bucket": "mydoors-cee27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321310422357:android:9c89a904e0210a6fc0abdc",
+        "android_client_info": {
+          "package_name": "org.nativescript.MyDoors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321310422357-d6g4pft3me4f97d681inh6lhr8g346ab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFihz0jIXNw1DD0bJ4QQ-2ZXB6M_gtAz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321310422357-d6g4pft3me4f97d681inh6lhr8g346ab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

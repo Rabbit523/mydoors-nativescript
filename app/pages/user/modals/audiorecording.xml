@@ -1,0 +1,11 @@
+<GridLayout id="recordingModal" loaded="recModalLoaded" class="md-audio-rec">
+    <StackLayout tap="{{ close }}" />
+    <FlexboxLayout class="md-audio-rec-inner">
+        <Image tap="{{ toAudioRecordingStart }}" id="button_rec" class="md-audio-rec-button" src="{{ image }}" stretch="aspectFit" />
+        <Button visibility="{{ status == 'done' ? 'visible' : 'collapsed' }}" class="md-btn" text="Prosegui" tap="{{ toAudioRecordingSend }}" />
+        <FlexboxLayout visibility="{{ status == 'paused' ? 'visible' : 'collapsed' }}" class="md-audio-rec-actions">
+            <Image tap="{{ toAudioRecordingStartCancel }}" src="~/images/recs/btn_rec_cancel.png" stretch="aspectFit" />
+            <Image tap="{{ toAudioRecordingStartConfirm }}" src="~/images/recs/btn_rec_confirm.png" stretch="aspectFit" />
+        </FlexboxLayout>
+    </FlexboxLayout>
+</GridLayout>

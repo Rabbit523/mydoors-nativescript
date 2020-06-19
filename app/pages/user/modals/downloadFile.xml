@@ -1,0 +1,7 @@
+<GridLayout class="md-modal-download" touch="bypassTap" loaded="downloadFileLoaded" id="viewPhotoModal" rows="*, auto, *" columns="15, *, 15">
+	<FlexboxLayout class="md-modal-download-wrapper" row="1" col="1">
+		<Label class="md-modal-download-title" text="{{ user_name }}" textWrap="true" />
+		<Button class="md-btn" text="Scarica" tap="downloadAttachedFile" />
+		<Button class="md-btn" text="Chiudi" tap="hideDownloadFile" />
+	</FlexboxLayout>
+</GridLayout>

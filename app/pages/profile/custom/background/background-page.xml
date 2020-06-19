@@ -1,0 +1,27 @@
+<Page class="page page-custom"
+    actionBarHidden="true"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:lv="nativescript-ui-listview"
+    xmlns:comps="components"
+    navigatingTo="navigatingTo">
+    <GridLayout rows="130, *">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <FlexboxLayout row="1" class="page-content md-color-list">
+            <GridLayout rows="auto, 15, auto, 15, auto" columns="auto, 15, auto, 15, auto">
+                <Button row="0" col="0" tap="changeBg" val="#fffcee" class="md-reset-btn md-btn-set" text="Default" />
+                <Button row="0" col="2" tap="changeBg" val="#aaccff" class="md-reset-btn md-btn-set" text="Blu" />
+                <Button row="0" col="4" tap="changeBg" val="#ccffee" class="md-reset-btn md-btn-set" text="Verde" />
+
+                <Button row="2" col="0" tap="changeBg" val="#ffaacc" class="md-reset-btn md-btn-set" text="Rosa" />
+                <Button row="2" col="2" tap="changeBg" val="#ffeeaa" class="md-reset-btn md-btn-set" text="Canarino" />
+                <Button row="2" col="4" tap="changeBg" val="#ffffaa" class="md-reset-btn md-btn-set" text="Limone" />
+
+                <Button row="4" col="0" tap="changeBg" val="#ffffff" class="md-reset-btn md-btn-set" text="Bianco" />
+                <Button row="4" col="2" tap="changeBg" val="#ffaaaa" class="md-reset-btn md-btn-set" text="Rosso" />
+                <Button row="4" col="4" tap="changeBg" val="#aaaaff" class="md-reset-btn md-btn-set" text="Lilla" />
+            </GridLayout>
+        </FlexboxLayout>
+    </GridLayout>
+</Page>

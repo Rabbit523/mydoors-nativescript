@@ -1,0 +1,30 @@
+<FlexboxLayout loaded="loadedPergamena" id="pergamenaModal" xmlns:parts="pages/user/parts">
+    <GridLayout rows="459" columns="325">
+        <FlexboxLayout justifyContent="center" alignItems="center" id="pergamenaClosed">
+            <Image src="~/images/pergamena_closed.png" height="153" width="324" stretch="aspectFit" />
+        </FlexboxLayout>
+        <GridLayout id="pergamenaOpened" rows="459" columns="325">
+            <Image src="~/images/pergamena_opened.png" stretch="aspectFit" />
+            <GridLayout rows="50, auto, *, auto, 50">
+                <Label row="1" class="h1 text-center" text="Pergamena" textWrap="true" />
+                <GridLayout rows="*, auto" class="p-x-30" row="2">
+                    <GridLayout marginTop="15" marginBottom="15" rows="auto, auto, auto" columns="*, auto, *, auto, *">
+                        <Image col="1" row="0" width="40" height="40" borderRadius="40" tap="{{ setPergamenaIcon }}" value="wine" src="~/images/pergamena/wine.png" stretch="aspectFit" />
+                        <Image col="1" row="1" width="40" height="40" borderRadius="40" tap="{{ setPergamenaIcon }}" value="gift" src="~/images/pergamena/gift.png" stretch="aspectFit" />
+                        <Image col="1" row="2" width="40" height="40" borderRadius="40" tap="{{ setPergamenaIcon }}" value="heart" src="~/images/pergamena/heart.png" stretch="aspectFit" />
+                        <parts:checkbox col="3" row="0" tap="{{ setPergamenaColor }}" value="yellow" label="Giallo" />
+                        <parts:checkbox col="3" row="1" tap="{{ setPergamenaColor }}" value="blue" label="Blu" />
+                        <parts:checkbox col="3" row="2" tap="{{ setPergamenaColor }}" value="red" label="Rosso" />
+
+                    </GridLayout>
+                    <Label row="1" class="h4 p-20 text-center" textWrap="true" text="Vuoi lasciare un indizio? scegli un colore" />
+                </GridLayout>
+                <FlexboxLayout row="3" alignItems="center" justifyContent="center">
+                    <Button class="md-btn" borderRadius="12" text="Invia" tap="{{ sendPergamena }}" />
+                    <Label text="" textWrap="true" width="20" />
+                    <Button class="md-btn" borderRadius="12" text="Annulla" tap="closePergamena" />
+                </FlexboxLayout>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</FlexboxLayout>

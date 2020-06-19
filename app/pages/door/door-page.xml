@@ -1,0 +1,46 @@
+<Page class="page"
+    actionBarHidden="true"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:comps="components"
+    xmlns:lv="nativescript-ui-listview"
+    navigatingTo="navigatingTo">
+    <GridLayout rows="130, *, 80">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack"/>
+        </StackLayout>
+        <GridLayout row="1" rows="auto, *" class="page-content">
+            <StackLayout row="0">
+                <FlexboxLayout class="md-door-btn md-door-btn-single">
+                    <Image flexShrink="0" width="103" height="103" src="{{ door_color }}"/>
+                    <Label flexShrink="0" text="{{ door_name }}"/>
+                </FlexboxLayout>
+            </StackLayout>
+            <lv:RadListView
+                id="listUsers"
+                visibility="{{ users.length > 0 ? 'visible' : 'collapsed' }}"
+                class="m-t-10" style="width: 90%; margin: 0 auto;"
+                items="{{ users }}"
+                multipleSelection="false"
+                itemSelected="{{ onUserSelected }}"
+                itemDeselected="{{ onUserDeselected }}"
+                row="1" selectionBehavior="LongPress"
+                itemTap="{{ itemSelected }}">
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="100" spanCount="4"/>
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                    <StackLayout class="md-door-user" backgroundColor="transparent">
+                        <AbsoluteLayout class="md-door-user-avatar" backgroundImage="{{ avatar ? avatar : gender == 'M' ? '~/images/avatars/male.png' : '~/images/avatars/female.png' }}">
+                            <Label id="icon_delete" visibility="collapsed" tap="toDelete" text="x" class="usr-notif"/>
+                        </AbsoluteLayout>
+                        <Label class="md-door-user-name" text="{{ firstname + ' ' + lastname }}" textWrap="true"/>
+                    </StackLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+            <Label row="1" class="md-door-noelements" visibility="{{ users.length === 0 ? 'visible' : 'collapsed' }}" text="Non ci sono utenti in questa Door." textWrap="true"/>
+        </GridLayout>
+        <StackLayout row="2">
+            <Button horizontalAlignment="center" class="md-reset-btn md-btn-add-door" id="addUser" tap="{{ addUser }}"/>
+        </StackLayout>
+    </GridLayout>
+</Page>

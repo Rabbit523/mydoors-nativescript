@@ -1,0 +1,51 @@
+<Page class="page" xmlns:modals="pages/home/modals" actionBarHidden="true" navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+    <GridLayout rows="auto, *, 80, 80" columns="auto, *, auto">
+        <StackLayout row="0" col="0" colSpan="3" padding="20">
+            <android> <Label height="20" text="" /> </android>
+            <Image src="~/images/buttonavatar.png" class="md-btn-avatar" horizontalAlignment="right" stretch="aspectFit" tap="toProfile" />
+        </StackLayout>
+        <FlexboxLayout col="0" colSpan="3" row="1" flexDirection="column" alignItems="stretch" justifyContent="center">
+            <AbsoluteLayout col="0" colSpan="3" row="1" id="door_container">
+                <!-- <FlexboxLayout left="43" top="200" class="md-door-btn" id="btn_door_1">
+                    <Button tap="goToDoor" door-id="1" door-name="Family" door-color="#3E44C3" style="background-color: #3E44C3" />
+                    <Label text="Family" />
+                </FlexboxLayout> -->
+            </AbsoluteLayout>
+        </FlexboxLayout>
+
+        <StackLayout height="80" col="0" colSpan="3" row="3">
+            <Button
+            tintColor="red"
+                visibility="{{ canAddDoor ? 'visible' : 'collapsed' }}"
+                horizontalAlignment="center"
+                class="md-reset-btn md-btn-add-door"
+                id="add_door"
+                tap="addDoor" />
+        </StackLayout>
+
+        <FlexboxLayout id="misteryDoor" col="0" row="2" rowSpan="2">
+            <AbsoluteLayout width="88" height="88">
+                <Image src="~/images/misterydoor.png" tap="{{ navigateToMistery }}" width="88" height="88" stretch="aspectFit" />
+                <Label color="white" left="68" top="5"
+                    visibility="{{ mistery_notifs > 0 ? 'visible' : 'collapsed' }}"
+                    class="md-home-notifs"
+                    text="{{ mistery_notifs }}"
+                    textWrap="true" />
+            </AbsoluteLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout id="readPergamena" col="2" row="2" rowSpan="2">
+            <AbsoluteLayout width="65" height="65">
+                <Image tap="{{ openPergamena }}" src="~/images/readpergamena.png" width="65" height="65" stretch="aspectFit" />
+                <Label color="white" left="45" top="5"
+                    visibility="{{ pergamena_notifs > 0 ? 'visible' : 'collapsed' }}"
+                    class="md-home-notifs"
+                    text="{{ pergamena_notifs }}"
+                    textWrap="true" />
+            </AbsoluteLayout>
+        </FlexboxLayout>
+
+        <modals:pergamena />
+
+    </GridLayout>
+</Page>

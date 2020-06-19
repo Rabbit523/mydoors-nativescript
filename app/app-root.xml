@@ -1,0 +1,4 @@
+<GridLayout class="md-app-wrapper" xmlns:ml="components/main_loader">
+    <Frame backgroundColor="{{ bkgColor }}" id="defaultFrame" loaded="onLoaded" navigated="navigated" defaultPage="{{ route }}"></Frame>
+    <ml:main_loader />
+</GridLayout>

@@ -1,0 +1,19 @@
+.md-main-loader {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fffcee;
+    opacity: 0;
+    visibility: collapse;
+}
+
+.md-main-loader > * { flex-shrink: 0; }
+
+.md-main-loader Label {
+    font-size: 25;
+    font-family: "Roboto-Bold", sans-serif;
+    color: #d9534f;
+
+}
+
+.md-main-loader ActivityIndicator { color: #d9534f; }

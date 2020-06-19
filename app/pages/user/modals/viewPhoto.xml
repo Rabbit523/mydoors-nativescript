@@ -1,0 +1,7 @@
+<GridLayout class="md-modal-view-photo" touch="bypassTap" loaded="viewPhotoLoaded" id="viewPhotoModal" rows="*, auto, *" columns="15, *, 15">
+	<FlexboxLayout class="md-modal-view-photo-wrapper" row="1" col="1">
+		<Label class="md-modal-view-photo-title" text="{{ user_name }}" textWrap="true" />
+		<Image class="md-modal-view-photo-image" src="{{ body }}" stretch="aspectFit" />
+		<Button class="md-btn" text="Chiudi" tap="hideViewPhoto" />
+	</FlexboxLayout>
+</GridLayout>

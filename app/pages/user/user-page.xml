@@ -1,0 +1,58 @@
+<Page class="page" actionBarHidden="true" navigatingFrom="{{ navigatingFrom }}" navigatingTo="navigatingTo" navigatedTo="{{ navigatedTo }}"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:comps="components"
+    xmlns:modals="pages/user/modals"
+    xmlns:parts="pages/user/parts">
+    <GridLayout rows="130, *, 110">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <GridLayout row="1" rows="auto, *" class="page-content">
+            <StackLayout row="0">
+                <FlexboxLayout class="{{ is_mistery ? 'md-door-btn md-door-btn-single md-door-btn-mistery' : 'md-door-btn md-door-btn-single' }}">
+                    <Image visibility="{{ is_mistery ? 'collapsed' : 'visible' }}" width="103" height="103" src="{{ door_color }}" />
+                    <Image visibility="{{ is_mistery ? 'visible' : 'collapse' }}" width="103" height="103" src="~/images/misterydoor.png" />
+                    <Label text="{{ door_name }}" />
+                </FlexboxLayout>
+            </StackLayout>
+
+            <FlexboxLayout row="1" class="md-user-avatar">
+                <Image borderRadius="200" class="img-logo" src="{{ user.avatar ? user.avatar : user.gender == 'M' ? '~/images/avatars/male.png' : '~/images/avatars/female.png' }}" stretch="aspectFill" />
+                <Label class="md-avatar-name" text="{{ user.firstname + ' ' + user.lastname }}" />
+            </FlexboxLayout>
+
+            <FlexboxLayout row="1" class="md-user-actions">
+                <AbsoluteLayout id="userActions" class="md-user-actions-inner">
+                    <parts:action id="audioAction" notifs="{{ notifications.audio.length }}" tap="{{ openRecordingModal }}" image="~/images/useractions/audio.png" type="audio" />
+                    <parts:action id="trilloAction" notifs="0" tap="{{ sendTrillo }}" image="~/images/useractions/trillo.png" type="trillo" />
+                    <parts:action id="pergamenaAction" notifs="0" tap="{{ openPergamenaModal }}" image="~/images/useractions/pergamena.png" type="pergamena" />
+                    <parts:action id="textAction" notifs="{{ notifications.text.length }}" tap="{{ openMessageModal }}" image="~/images/useractions/message.png" type="message" />
+                    <parts:action id="videoAction" notifs="{{ notifications.video.length }}" tap="{{ sendVideo }}" image="~/images/useractions/video.png" type="video" />
+                    <parts:action id="photoAction" notifs="{{ notifications.photo.length }}" tap="{{ sendPhoto }}" image="~/images/useractions/photo.png" type="photo" />
+                    <parts:action id="geolocationAction" notifs="0" tap="{{ sharePosition }}" image="~/images/useractions/position.png" type="geolocation" />
+                    <parts:action id="sharecontactAction" notifs="0" tap="{{ shareContact }}" image="~/images/useractions/sharecontact.png" type="sharecontact" />
+                    <parts:action id="attachedfileAction" notifs="{{ notifications.attachedfile.length }}" tap="{{ openFileToShare }}" image="~/images/useractions/attachfile.png" type="attachfile" />
+                </AbsoluteLayout>
+            </FlexboxLayout>
+
+        </GridLayout>
+
+        <FlexboxLayout visibility="{{ is_mistery ? 'collapsed' : 'visible' }}" row="2" class="md-door-btn small">
+            <Image src="{{ nextDoor_color }}" stretch="aspectFit" width="71" height="71" tap="navigateToNext" />
+            <Label text="{{ nextDoor_name }}" />
+        </FlexboxLayout>
+
+        <Button row="2" visibility="{{ is_mistery ? 'visible' : 'collapsed' }}" class="md-btn large" text="{{'Aggiungi ' + user.firstname }}" tap="{{ openAddUserModal }}" />
+
+        <modals:addUserModal user="{{ user }}" />
+        <modals:messageModal />
+        <modals:readMessage rowSpan="4" colSpan="3" />
+        <modals:viewPhoto rowSpan="4" colSpan="3" />
+        <modals:viewVideo rowSpan="4" colSpan="3" />
+        <modals:showMap rowSpan="4" colSpan="3" />
+        <modals:downloadFile rowSpan="4" colSpan="3" />
+        <modals:audiorecording rowSpan="4" colSpan="3" user_id="{{ user.id }}" />
+        <modals:pergamena rowSpan="4" colSpan="3" sending="true" />
+        <comps:loader visibility="{{ isLoading ? 'visible' : 'collapsed' }}" rowSpan="4" colSpan="3" />
+    </GridLayout>
+</Page>

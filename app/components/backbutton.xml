@@ -1,0 +1,6 @@
+<GridLayout rows="70" columns="70">
+	<Button row="0" col="0" width="100%" class="md-reset-btn" />
+	<FlexboxLayout row="0" col="0" justifyContent="center" alignItems="center">
+		<Image src="~/images/backbutton.png" width="30" height="30" stretch="aspectFit" class="back-button"/>
+	</FlexboxLayout>
+</GridLayout>

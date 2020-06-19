@@ -1,0 +1,30 @@
+.md-read-message-modal {
+    background-color: rgba(255,255,255, 0.75);
+    visibility: collapse;
+    opacity: 0;
+}
+
+/* .md-read-message-modal .md-read-message-modal-bg {} */
+.md-read-message-modal .md-read-message-modal-wrapper {
+    flex-direction: column;
+    align-items: center;
+}
+.md-read-message-modal .md-read-message-modal-inner {
+    padding: 10;
+    width: 100%;
+    background-color: #ddd297;
+    border-color: #a59d73;
+    border-width: 1;
+    border-radius: 8;
+    android-elevation: 10;
+    margin-bottom: 20;
+}
+.md-read-message-modal .md-read-message-modal-title {
+    font-family: "Roboto-Regular";
+    font-size: 25;
+    margin-bottom: 5;
+}
+.md-read-message-modal .md-read-message-modal-body {
+    font-family: "Roboto-Light";
+    font-size: 12;
+}

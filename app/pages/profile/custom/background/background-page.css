@@ -1,0 +1,15 @@
+.md-color-list {
+    justify-content: center;
+    align-items: center;
+}
+.md-btn-set {
+    background-color: #ddd297;
+    color: #68543e;
+    border-color: #68543e;
+    border-width: 1;
+    width: 80;
+    height: 80;
+    margin: 5;
+    border-radius: 40;
+    android-elevation: 10;
+}

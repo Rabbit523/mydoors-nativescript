@@ -1,0 +1,17 @@
+<Page actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<FlexboxLayout height="100%" alignItems="center" flexDirection="column" justifyContent="center">
+		<StackLayout width="283">
+			<Image src="~/images/logomydoors.png" stretch="aspectFill" class="img-logo" />
+			<Label textAlignment="center" class="m-b-30">
+				<FormattedString>
+					<Span class="md-title" text="Inserisci codice"/>
+				</FormattedString>
+			</Label>
+			<TextField class="text-field" returnKeyType="done" text="{{ code }}" hint="Codice di verifica" />
+			<Button class="md-btn" text="Verifica" tap="{{ onSubmit }}" />
+			<Button class="md-btn" text="Richiedi codice" tap="{{ onRequestAgain }}" />
+			<Label text="oppure" textAlignment="center" />
+			<Button class="md-btn" text="Accedi" tap="onTap" />
+		</StackLayout>
+	</FlexboxLayout>
+</Page>

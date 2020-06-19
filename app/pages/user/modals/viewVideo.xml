@@ -1,0 +1,13 @@
+<GridLayout xmlns:expoplayer="nativescript-exoplayer" class="md-modal-view-video" touch="bypassTap" loaded="viewVideoLoaded" id="viewVideoModal" rows="*, auto, *" columns="15, *, 15">
+	<FlexboxLayout class="md-modal-view-video-wrapper" row="1" col="1">
+		<Label class="md-modal-view-video-title" text="{{ user_name }}" textWrap="true" />
+		<!-- <Image class="md-modal-view-video-image" src="{{ body }}" stretch="aspectFit" /> -->
+        <expoplayer:Video id="nativeVideoPlayer"
+            controls="true" loop="true" autoplay="false" height="280"
+            src="{{ body }}" />
+        <!-- <expoplayer:Video id="nativeVideoPlayer"
+            controls="true" loop="true" autoplay="false" height="280"
+            src="https://www.videvo.net/videvo_files/converted/2013_08/preview/hd0992.mov31753.webm" /> -->
+		<Button class="md-btn" text="Chiudi" tap="hideViewVideo" />
+	</FlexboxLayout>
+</GridLayout>

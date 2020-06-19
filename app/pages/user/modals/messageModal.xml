@@ -1,0 +1,9 @@
+<FlexboxLayout touch="{{bypassTap}}" class="md-modal md-message-modal" id="messageModal" rowSpan="3" visibility="{{ message_modal ? 'visible' : 'collapsed' }}">
+    <GridLayout rows="auto" columns="15, *, 15">
+        <StackLayout col="1" row="0">
+            <TextView blur="{{ onBlurMessageBox }}" focus="{{ onFocusMessageBox }}" class="md-textarea" marginBottom="20" height="200" hint="Scrivi il messaggio da inviare..." text="{{ messageData }}" editable="true" />
+            <Button horizontalAlignment="center" class="md-btn m-b-20" text="Invia" tap="{{ sendMessage }}" />
+            <Button horizontalAlignment="center" class="md-btn" text="Annulla" tap="{{ closeMessageModal }}" />
+        </StackLayout>
+    </GridLayout>
+</FlexboxLayout>

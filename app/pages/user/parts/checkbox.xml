@@ -1,0 +1,4 @@
+<FlexboxLayout loaded="getText" class="md-pergamena-check">
+    <Label id="check_box" class="box" text="" />
+    <Label id="check_lbl" class="box-label" text="" textWrap="true" />
+</FlexboxLayout>

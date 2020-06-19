@@ -1,0 +1,16 @@
+<Page class="page page-custom"
+    actionBarHidden="true"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:lv="nativescript-ui-listview"
+    xmlns:comps="components"
+    navigatingTo="navigatingTo">
+    <GridLayout rows="130, *">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <FlexboxLayout row="1" class="page-content">
+            <Button class="md-reset-btn md-btn large" text="Skin Classica" />
+            <Button class="md-reset-btn md-btn large" text="Skin Estate" />
+        </FlexboxLayout>
+    </GridLayout>
+</Page>

@@ -1,0 +1,31 @@
+<Page class="page" xmlns:comps="components" actionBarHidden="true" xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="navigatingTo" navigatedFrom="{{ navigatedFrom }}">
+    <GridLayout rows="130, *">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <GridLayout row="1" rows="auto, *" class="page-content">
+            <StackLayout row="0">
+                <FlexboxLayout class="md-door-btn">
+                    <Image id="doorImage" tap="{{ tapdoor }}" src="{{ backgroundDoor }}" stretch="aspectFit" width="103" height="103" />
+                    <Label id="doorName" width="100%" style="text-align: center" doubleTap="{{ ddtap }}" text="{{ doorName }}" />
+                </FlexboxLayout>
+            </StackLayout>
+            <GridLayout rows="auto, 20, *" row="1">
+                <TextField row="0" horizontalAlignment="center" class="text-field" hint="Search" text="{{ search }}" textChange="{{ textChange }}" />
+                <ListView row="2" class="md-listview-users" horizontalAlignment="center" items="{{ filteredUsers }}" itemTap="{{ onItemTap }}">
+                    <ListView.itemTemplate>
+                        <GridLayout rows="49">
+                            <Image row="0" src="res://listview_user" stretch="aspectFill" />
+
+                            <FlexboxLayout row="0" class="md-lv-single">
+                                <Image class="md-lv-single-avatar" src="{{ avatar }}" stretch="aspectFill" />
+                                <Label text="{{ firstname + ' ' + lastname }}" textWrap="true" />
+                                <Image class="md-lv-single-add" src="~/images/adddoor.png" stretch="aspectFill" />
+                            </FlexboxLayout>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</Page>

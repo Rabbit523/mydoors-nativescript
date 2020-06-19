@@ -1,0 +1,24 @@
+<Page class="page page-profile" actionBarHidden="true"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:comps="components"
+    navigatingTo="navigatingTo">
+    <GridLayout rows="auto, *">
+        <StackLayout row="0" orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+
+        <FlexboxLayout row="1" class="page-profile-content">
+            <Image visibility="{{ avatar ? 'visible' : 'collapsed'}}" src="{{ avatar }}" stretch="aspectFill" class="profile-avatar" />
+            <Image visibility="{{ !avatar ? 'visible' : 'collapsed'}}" src="{{ gender == 'M' ? '~/images/avatars/male.png' : '~/images/avatars/female.png' }}" stretch="aspectFill" class="profile-avatar" />
+            <Label text="{{ firstname + ' ' + lastname }}" class="profile-name" />
+
+            <Button class="md-btn large" text="Personalizza" tap="goCustom" />
+            <Button class="md-btn large" text="Modifica profilo" tap="goEdit" />
+            <Button class="md-btn large" text="Invita un amico" />
+            <!-- <Button class="md-btn large" text="Utenti Bloccati" /> -->
+            <!-- <Label class="md-flx-spacer" /> -->
+            <Button class="md-btn large" text="Elimina Account" tap="toDeleteAccount" />
+            <Button class="md-btn large" text="Logout" tap="toLogout" />
+        </FlexboxLayout>
+    </GridLayout>
+</Page>

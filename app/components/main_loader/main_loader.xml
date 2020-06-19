@@ -1,0 +1,4 @@
+<FlexboxLayout loaded="loadedMainLoader" visibility="{{ is_active ? 'visible' : 'collapse' }}" id="main-loader" class="md-main-loader" touch="bypassTap">
+    <Label text="Attendi" textWrap="true" />
+    <ActivityIndicator width="100" height="100" busy="true" />
+</FlexboxLayout>
