@@ -1,5 +1,5 @@
 <Page class="page" xmlns:modals="pages/home/modals" actionBarHidden="true" navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    <GridLayout rows="auto, *, 80, 80" columns="auto, *, auto">
+    <GridLayout rows="auto, *, 80, 80" columns="auto, *, auto" id="full-container">
         <StackLayout row="0" col="0" colSpan="3" padding="20">
             <android> <Label height="20" text="" /> </android>
             <Image src="~/images/buttonavatar.png" class="md-btn-avatar" horizontalAlignment="right" stretch="aspectFit" tap="toProfile" />

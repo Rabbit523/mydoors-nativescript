@@ -1,14 +1,14 @@
 import { NavigatedData, Page, EventData } from "tns-core-modules/ui/page";
-import { AbsoluteLayout, FlexboxLayout } from 'tns-core-modules/ui/layouts';
+import { GridLayout, AbsoluteLayout, FlexboxLayout } from 'tns-core-modules/ui/layouts';
 import { Button, Label, Image } from "tns-core-modules/ui";
 import { NavigationEntry } from "tns-core-modules/ui/frame/frame";
+import { GestureTypes, SwipeGestureEventData } from "tns-core-modules/ui/gestures";
 import { Door } from '~/shared/models/door';
 import { HomePageModel } from './home-page-model';
 import * as platform from 'tns-core-modules/platform';
 import { UserService } from "~/shared/models/user";
 import { messageService } from "~/shared/models/message";
 import { showMainLoader, hideMainLoader } from "~/components/main_loader/main_loader";
-
 
 let theta: Array<number> = [];
 let generatedButtons: Array<FlexboxLayout> = [];
@@ -17,6 +17,9 @@ let widthDevice = platform.screen.mainScreen.widthDIPs;
 let tmpDoorList : any[];
 let usrService : UserService;
 let msgService : messageService;
+let _direct: number = 0;
+let _angle: number = 0;
+let angle: number = 0;
 
 export async function onNavigatingTo(args: NavigatedData) {
 	showMainLoader();
@@ -132,11 +135,50 @@ function setup(n: number, r: number, page: Page) {
 		absLayout.addChild(btnWrapper);
 		generatedButtons.push(btnWrapper);
 	}
+	const mainLayout = <GridLayout>page.getViewById('full-container');
+	const frags = 360 / n;
+	mainLayout.on(GestureTypes.swipe, function (args: SwipeGestureEventData) {
+		const direct = args.direction == 1 ? 'right' : args.direction == 2 ? 'left' : 'none';
+		if (_direct < 4) {
+			_direct ++;
+		} else {
+			_direct = 0;
+		}
+		if (direct == 'right') {
+			_angle += frags;
+			angle -= frags;
+			absLayout.animate({
+				rotate: _angle,
+				duration: 2000
+			});
+			for (let index = 0; index < n; index++) {
+				const doorButton: FlexboxLayout = generatedButtons[index];
+				doorButton.animate({
+					rotate: angle,
+					duration: 2000
+				});
+			}
+		} else {
+			_angle -= frags;
+			angle += frags;
+			absLayout.animate({
+				rotate: _angle,
+				duration: 2000
+			});
+			for (let index = 0; index < n; index++) {
+				const doorButton: FlexboxLayout = generatedButtons[index];
+				doorButton.animate({
+					rotate: angle,
+					duration: 2000
+				});
+			}
+		}
+	});
 };
 
 function generate(n: number, r: number, page: Page) {
 	var frags = 360 / n;
-	for (var i = 0; i <= n; i++) {
+	for (var i = 0; i < n; i++) {
 		theta.push((frags / 180) * i * Math.PI);
 	}
 	setup(n, r, page)
