@@ -1,7 +1,6 @@
 <Page class="page page-custom"
     actionBarHidden="true"
     xmlns="http://www.nativescript.org/tns.xsd"
-    xmlns:lv="nativescript-ui-listview"
     xmlns:comps="components"
     navigatingTo="navigatingTo">
     <GridLayout rows="130, *">
@@ -9,8 +8,8 @@
             <comps:backbutton tap="goBack" />
         </StackLayout>
         <FlexboxLayout row="1" class="page-content">
-            <Button class="md-reset-btn md-btn large" text="Skin Classica" />
-            <Button class="md-reset-btn md-btn large" text="Skin Estate" />
+            <Button class="md-reset-btn md-btn large" pkg="classic" tap="goTo" text="Skin Classica" />
+            <Button class="md-reset-btn md-btn large" pkg="summer" tap="goTo" text="Skin Estate" />
         </FlexboxLayout>
     </GridLayout>
 </Page>

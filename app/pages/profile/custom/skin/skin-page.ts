@@ -10,3 +10,16 @@ export function navigatingTo(args: EventData) {
 export function goBack(args: EventData) {
     page.frame.goBack();
 }
+
+export function goTo(args) {
+	const button = args.object;
+	const page : Page = button.page;
+	const pkg = button.pkg;
+
+	page.frame.navigate({
+		moduleName: 'pages/packs/packs-page',
+		context:{
+			pkg: pkg
+		}
+	})
+}

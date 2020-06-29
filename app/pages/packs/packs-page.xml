@@ -1,0 +1,19 @@
+<Page class="page page-custom"
+    actionBarHidden="true"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:comps="components"
+    navigatingTo="navigatingTo">
+    <ScrollView>
+    <StackLayout>
+        <StackLayout orientation="horizontal" class="page-head">
+            <comps:backbutton tap="goBack" />
+        </StackLayout>
+        <StackLayout>
+            <Image src="{{ '~/images/packs/pkg_' + pkg + '.png' }}" width="100%" stretch="aspectFit" />
+            <FlexboxLayout justifyContent="center" padding="10">
+                <Button class="md-reset-btn md-btn large" text="{{ pkg == 'classic' ? 'Imposta' : 'Acquista' }}" />
+            </FlexboxLayout>
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</Page>
