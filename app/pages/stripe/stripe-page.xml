@@ -2,17 +2,16 @@
     actionBarHidden="true"
     xmlns="http://www.nativescript.org/tns.xsd"
     xmlns:comps="components"
+    xmlns:stripe="nativescript-stripe"
     navigatingTo="navigatingTo">
     <ScrollView>
     <StackLayout>
         <StackLayout orientation="horizontal" class="page-head">
             <comps:backbutton tap="goBack" />
         </StackLayout>
-        <StackLayout>
-            <Image src="{{ '~/images/packs/pkg_' + pkg + '.png' }}" width="100%" stretch="aspectFit" />
-            <FlexboxLayout justifyContent="center" padding="10">
-                <Button class="md-reset-btn md-btn large" tap="goPay" text="{{ pkg == 'classic' ? 'Imposta' : 'Acquista' }}" />
-            </FlexboxLayout>
+        <StackLayout >
+            <stripe:CreditCardView id="card"/>
+            <Button text="Submit" tap="submit" class="btn btn-primary"></Button>
         </StackLayout>
     </StackLayout>
     </ScrollView>

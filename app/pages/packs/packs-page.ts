@@ -7,15 +7,20 @@ let packsPageModel : PacksPageModel;
 
 export function navigatingTo(args: NavigatedData) {
 	page = args.object as Page;
-	pkg = args.context.pkg;
-
+	pkg = args.context.pkg;	
 	packsPageModel = new PacksPageModel(pkg);
-
 	page.bindingContext = packsPageModel;
 }
 
 export function goBack(args: EventData) {
-    page.frame.goBack();
+	page.frame.goBack();
 }
 
-
+export function goPay(args: EventData) {
+	page.frame.navigate({
+		moduleName: 'pages/stripe/stripe-page',
+		context:{
+			pkg: pkg
+		}
+	})
+}
