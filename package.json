@@ -19,7 +19,7 @@
     "nativescript-downloader": "^2.1.5",
     "nativescript-exoplayer": "^4.0.2",
     "nativescript-geolocation": "^5.1.0",
-    "nativescript-google-maps-sdk": "^2.9.1",
+    "nativescript-google-maps-sdk": "^3.0.2",
     "nativescript-local-notifications": "^4.2.1",
     "nativescript-mediafilepicker": "^3.0.1",
     "nativescript-plugin-firebase": "^10.6.3",
