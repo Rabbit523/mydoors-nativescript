@@ -12,7 +12,7 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
-    "@nativescript/theme": "~2.2.1",
+    "@nativescript/theme": "~3.0.1",
     "@nstudio/nativescript-audio-recorder": "^0.1.0",
     "nativescript-audio": "^5.0.5",
     "nativescript-camera": "^4.5.0",
