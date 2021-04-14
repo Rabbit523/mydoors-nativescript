@@ -29,7 +29,7 @@
     "tns-core-modules": "~6.3.0"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "~1.4.0",
+    "nativescript-dev-webpack": "~1.5.1",
     "tns-platform-declarations": "^6.5.7",
     "typescript": "~4.2.4"
   },
