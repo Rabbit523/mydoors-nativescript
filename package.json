@@ -24,7 +24,7 @@
     "nativescript-mediafilepicker": "^3.0.1",
     "nativescript-plugin-firebase": "^10.6.3",
     "nativescript-stripe": "^6.6.2",
-    "nativescript-ui-listview": "^8.0.1",
+    "nativescript-ui-listview": "^9.1.0",
     "nativescript-vibrate": "^3.0.0",
     "tns-core-modules": "~6.3.0"
   },
