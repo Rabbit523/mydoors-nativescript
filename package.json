@@ -31,7 +31,7 @@
   "devDependencies": {
     "nativescript-dev-webpack": "~1.4.0",
     "tns-platform-declarations": "^6.5.7",
-    "typescript": "~4.2.4"
+    "typescript": "~4.3.2"
   },
   "gitHead": "fa98f785df3fba482e5e2a0c76f4be1fa6dc7a14",
   "readme": "NativeScript Application"
