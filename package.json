@@ -14,7 +14,7 @@
   "dependencies": {
     "@nativescript/theme": "~3.0.1",
     "@nstudio/nativescript-audio-recorder": "^0.1.0",
-    "nativescript-audio": "^5.0.5",
+    "nativescript-audio": "^6.2.5",
     "nativescript-camera": "^4.5.0",
     "nativescript-downloader": "^2.1.5",
     "nativescript-exoplayer": "^4.0.2",
